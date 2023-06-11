@@ -1,0 +1,268 @@
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    width: 170px;
+    background-color: rgb(224, 222, 243);
+    font: small-caps bold 48px/1.5 sans-serif;
+    position: fixed;
+    z-index: 10000;
+}
+
+
+.zoom {
+z-index: 1000001;
+top: 20%;
+right: 0%;
+position: fixed;
+}
+
+    .zoom button {
+        color: white;
+        font-size: 30px;
+        border-radius: 90px;
+        margin: 1.25rem 1rem;
+        background-color: navy;
+        border: 6px solid navy;
+        width: 50px;
+        height: 50px;
+        display: block;
+    }
+
+/* 2023 06 07 호선별 zoom값*/
+.zoomline {
+      z-index: 1000001;
+      top: 20%;
+      right: 0%;
+      position: fixed;
+      }
+      
+      .zoomline button {
+              color: white;
+              font-size: 30px;
+              border-radius: 90px;
+              margin: 1.25rem 1rem;
+              background-color: navy;
+              border: 6px solid navy;
+              width: 50px;
+              height: 50px;
+              display: block;
+          }
+
+.train-line {
+padding: 20px;
+height: fit-content;
+}
+
+#trainLine {
+overflow: auto;
+}
+
+.container {
+margin: 0 0 0 1.25rem;
+width: 100%;
+height: 100% !important;
+}
+
+.container svg {
+width: 70% !important;
+height: 70% !important;
+}
+
+body:has(input:checked) g,
+body:has(input:checked) .label-group text {
+opacity: 0.3;
+}
+body:has(input:checked) .label-group {
+opacity: 1;
+}
+
+/* 호선별 활성 스타일 */
+body:has(.line-1:checked) g#line-1,
+body:has(.line-1:checked) .L1 {
+opacity: 1;
+}
+body:has(.line-2:checked) g#line-2,
+body:has(.line-2:checked) .L2 {
+opacity: 1;
+}
+body:has(.line-3:checked) g#line-3,
+body:has(.line-3:checked) .L3 {
+opacity: 1;
+}
+body:has(.line-4:checked) g#line-4,
+body:has(.line-4:checked) .L4 {
+opacity: 1;
+}
+body:has(.line-5:checked) g#line-5,
+body:has(.line-5:checked) .L5 {
+opacity: 1;
+}
+body:has(.line-6:checked) g#line-6,
+body:has(.line-6:checked) .L6 {
+opacity: 1;
+}
+body:has(.line-7:checked) g#line-7,
+body:has(.line-7:checked) .L7 {
+opacity: 1;
+}
+body:has(.line-8:checked) g#line-8,
+body:has(.line-8:checked) .L8 {
+opacity: 1;
+}
+body:has(.line-9:checked) g#line-9,
+body:has(.line-9:checked) .L9 {
+opacity: 1;
+}
+
+/* 네비게이션 바 디자인 */
+.nav {
+    height: fit-content;
+}
+
+.currentLine {
+background-color: navy !important;
+}
+
+.nav ul {
+    margin: 1.25rem 0;
+    padding: 0;
+    top: 80px;
+    z-index: 9999;
+  /* position: relative;*/
+    position: fixed;
+}
+
+    .nav ul li {
+        margin: 2rem 0;
+        display: block;
+        list-style-type: none;
+        color: black;
+        
+    }
+
+  .nav ul li a {
+      color: white;
+      padding: 0.75rem 1.25rem;
+      text-decoration: none;
+      text-align: center;
+      background-color: #6a6ab7;
+      border-radius: 1rem 1rem;
+      border: unset;
+      font: small-caps bold 18px/1.5 sans-serif;
+
+  }
+
+
+@media (min-width: 1201px) {
+.nav {
+  width: 15%;
+}
+
+.section {
+  width: 85%;
+  display: flex;
+}
+.train-line {
+  width: 100%;
+}
+}
+
+@media (min-width: 768px) and (max-width: 1200px) {
+.nav ul li {
+  display: inline-block;
+}
+
+.nav ul {
+  position: static;
+  top: initial;
+}
+
+.logo {
+  position: static;
+}
+
+  .zoom {
+      top: 10% !important;
+      display: none;
+  }
+
+  .zoomline {
+    top: 10% !important;
+    display: none;
+  }
+}
+
+
+/* 모바일 반응형 */
+@media (max-width: 767px) {
+.nav ul li {
+  display: inline-block;
+}
+/* .nav > div {
+  display: inline-block;
+  position: relative;
+  top: 25px;
+} */
+
+.nav ul {
+  position: static;
+  top: initial;
+}
+
+.logo {
+  position: static;
+}
+
+.zoom {
+  top: 10% !important;
+  display: none;
+}
+
+.zoomline {
+  top: 10% !important;
+  display: none;
+}
+ 
+}
+/* 모달 구현*/
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 400px; /* Could be more or less, depending on screen size */
+  height: 300px; /* Your desired height */
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+
